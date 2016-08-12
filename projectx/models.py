@@ -35,3 +35,18 @@ class Td_User_Llam(models.Model):
 
     def __str__(self):
         return Ll_Cont_Nomb
+
+class Td_User_Apli(models.Model):
+    Id_User = models.ForeignKey(Tm_User, blank=False, null=False, max_length=20)
+    Ap_Nomb = models.CharField(blank=False, null=False, max_length=50)
+    Ap_Tiem = models.TimeField(blank=False, null=False)
+    Ap_Uso_Bate = models.IntegerField(default=0)
+    Ap_Dato_Reci = models.IntegerField(default=0)
+    Ap_Dato_Envi = models.IntegerField(default=0)
+    Ap_Fech = models.DateField(blank=False, null=False)
+    class Meta:
+        verbose_name = "Td_User_Apli"
+        verbose_name_plural = "Td_User_Aplis"
+
+    def __str__(self):
+        return Ap_Nomb
